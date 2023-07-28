@@ -12,6 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+
+			contacts: [
+
 			]
 		},
 		actions: {
@@ -37,7 +41,53 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+			deleteContacts: (index) => {
+				//get the store
+				const store = getStore();
+				const newContacts = store.todos.filter((todo, i) => {
+					return index !== i});
+				
+					setStore({ contacts: newContacts });	
+			},
+
+			addContact: () => {
+				//get the store
+				const store = getStore();
+
+				const contacts= store.contacts.concat(contact)
+
+				setStore({ contacts: contacts });
+			},
+
+			getInitialContacts: ()=> {
+				//get the store
+				const store = getStore();
+
+				fetch('https://jsonplaceholder.typicode.com/users')
+				.then(function(response) {
+					if (response.ok) {
+						return response.json();
+					}
+					else {
+						throw Error('We could not get the Contact Information')
+					}
+				})
+
+				.then(data => {
+
+				})
+
+				.catch(error =>{
+					console.log(error)
+				})
+
+				const newContacts = store.contacts.concat(contact)
+
+				setStore({ contacts: newContacts });
+
+			},
 		}
 	};
 };
