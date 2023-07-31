@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Contacts } from "../component/contacts";
 
 import { Context } from "../store/appContext";
 
@@ -9,7 +10,9 @@ export const ContactList = () => {
 
 	return (
 		<div className="container">
-			This is a contact list.
+			<ul>
+				
+			</ul>
 		</div>
 	);
 };

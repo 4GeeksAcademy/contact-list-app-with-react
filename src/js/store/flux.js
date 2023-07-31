@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
-			contacts: [
+			allcontacts: [
 
 			]
 		},
@@ -43,24 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			deleteContacts: (index) => {
-				//get the store
-				const store = getStore();
-				const newContacts = store.todos.filter((todo, i) => {
-					return index !== i});
-				
-					setStore({ contacts: newContacts });	
-			},
-
-			addContact: () => {
-				//get the store
-				const store = getStore();
-
-				const contacts= store.contacts.concat(contact)
-
-				setStore({ contacts: contacts });
-			},
-
+			// GET INITIAL CONTACTS
 			getInitialContacts: ()=> {
 				//get the store
 				const store = getStore();
@@ -76,18 +59,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 
 				.then(data => {
-
+					setStore({ allcontacts: data });
 				})
 
 				.catch(error =>{
 					console.log(error)
-				})
-
-				const newContacts = store.contacts.concat(contact)
-
-				setStore({ contacts: newContacts });
+				})				
 
 			},
+			
+			//ADD CONTACTS
+			addContact: (contact) => {
+				//get the store
+				const store = getStore();
+				const newContacts= store.allcontacts.concat(contact)
+
+				setStore({ allcontacts: newContacts });
+			},
+
+			// DELETE CONTACTS
+			deleteContacts: (index) => {
+				//get the store
+				const store = getStore();
+				const newContacts = store.allcontacts.filter((contact, i) => {
+					return index !== i});
+				
+					setStore({ allcontacts: newContacts });	
+			},
+
+			
 		}
 	};
 };
