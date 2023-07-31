@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Contacts } from "../component/contacts";
+import { Contact } from "../component/contacts";
 
 import { Context } from "../store/appContext";
 
@@ -11,7 +11,9 @@ export const ContactList = () => {
 	return (
 		<div className="container">
 			<ul>
-				
+				{store.allcontacts.map((contact, index) => (
+					<Contact contact={contact} index={index} deleteContacts={actions.deleteContacts} />
+				))}
 			</ul>
 		</div>
 	);
