@@ -18,14 +18,17 @@ export const AddContacts = () => {
 
 			<div className="container">
 				<h1>Add a new contact</h1>
+
+				<form className="mt-5">
+					<div className="form-group">
+						<label for="contactName">Full Name</label>
+						<input type="text" className="form-control" id="contactName" placeholder="Full Name" aria-describedby="emailHelp"/>
+					</div>
+		
+					<button type="submit" onClick={()=> { actions.addContact({fullname: newName}) }} className="btn btn-primary">Submit</button>
+				</form>
+
 			</div>
-			<form>
-				<div className="form-group">
-					<label for="contactName">Full Name</label>
-					<input type="text" onChange={(e) => { setNewName(e.target.value)}} className="form-control" id="contactName" placeholder="Full name"/>
-					<button type="submit" onClick={() => { actions.addContact({title: newName}) }} className="btn btn-primary mt-3">Add contact</button>
-				</div>
-			</form>
 		</div>
 	);
 };
