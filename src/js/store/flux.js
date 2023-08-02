@@ -87,7 +87,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ allcontacts: newContacts });	
 			},
 
+			editContacts: (index, newName) => {
+				//get the store
+				const store = getStore();
+
+				const newContacts = store.allcontacts.map((contact, i) => {
+					if (index == i) {
+						contact.name = newName
+					}
+					return contact;
+			})
+			setStore({ allcontacts: newContacts });
 			
+			}
 		}
 	};
 };
