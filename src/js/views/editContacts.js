@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
 
-export const AddContacts = () => {
+export const EditContacts = () => {
 	const { store, actions } = useContext(Context);
-
+    const params = useParams();
 	const [newName, setNewName] = useState("");
+
+   useEffect[() => {
+        if (store.allcontacts && store.allcontacts.length > 0 && store.allcontacts[params.index]) {
+            setNewName(store.allcontacts[params.index].name)
+        }
+   }, [store.allcontacts] ]
 
 	return (
 		<div className="container justify-content-center">
@@ -17,15 +23,17 @@ export const AddContacts = () => {
 			</Link>
 
 			<div className="container">
-				<h1>Add a new contact</h1>
+                <h1>{store.allcontacts && store.allcontacts.length > 0 && store.allcontacts[params.index] ? store.allcontacts[params.index].name: ""}</h1>
+
+				<h2>Edit your contact information:</h2>
 
 				<form className="mt-5">
 					<div className="form-group">
 						<label for="contactName">Full Name</label>
-						<input type="text" className="form-control" id="contactName" placeholder="Full Name" aria-describedby="emailHelp"/>
+						<input type="text" value={newName} onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactName" placeholder="Full Name" aria-describedby="emailHelp"/>
 					</div>
 		
-					<button type="submit" onClick={()=> { actions.addContact({name: newName}) }} className="btn btn-primary">Submit</button>
+					<button type="submit" onClick={()=> {  }} className="btn btn-primary">Save</button>
 				</form>
 
 			</div>

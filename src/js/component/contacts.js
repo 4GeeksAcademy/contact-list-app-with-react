@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Contact = (props) => (
 	<div className="card mb-3">
@@ -19,7 +20,10 @@ export const Contact = (props) => (
 			</div>
 
 			<div className="col-2 buttons">
-				<button type="button" className="btn btn-secondary m-2" href="#"><i class="far fa-edit"></i></button>
+				<Link to={"/editcontacts/" + props.index}>
+				<button type="button" className="btn btn-secondary m-2"><i class="far fa-edit"></i></button>
+				</Link>
+				
 				<button type="button" className="btn btn-danger m-2" href="#" onClick={() => { props.deleteContacts(props.index) }}><i class="fas fa-trash-alt"></i></button>
 				
 			</div>
