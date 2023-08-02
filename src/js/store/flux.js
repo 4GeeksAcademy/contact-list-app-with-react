@@ -97,6 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					return contact;
 			})
+			console.log(newContacts)
 			setStore({ allcontacts: newContacts });
 			
 			}
