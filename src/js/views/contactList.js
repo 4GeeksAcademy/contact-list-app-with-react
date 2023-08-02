@@ -10,6 +10,9 @@ export const ContactList = () => {
 
 	return (
 		<div className="container">
+			<Link to="/addcontacts">
+				<button className="btn btn-success m-5"><i class="fas fa-user-plus m-2"></i>Add new contact</button>
+			</Link>
 			<ul>
 				{store.allcontacts.map((contact, index) => (
 					<Contact contact={contact} index={index} deleteContacts={actions.deleteContacts} />

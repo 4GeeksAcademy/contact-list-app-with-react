@@ -5,7 +5,7 @@ export const Contact = (props) => (
 		<div className="row no-gutters">
 
 			<div className="col-2">
-				<img className="rounded-circle thumbnail img-responsive"src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="..."/>
+				<img className="rounded-circle thumbnail mt-2 ml-2"src="https://st.depositphotos.com/46542440/55685/i/450/depositphotos_556851916-stock-photo-square-face-character-in-stiff.jpg" alt="..."/>
 			</div>
 
 			<div className="col-6">
