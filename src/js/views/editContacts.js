@@ -40,17 +40,17 @@ export const EditContacts = () => {
 
 					<div className="form-group">
 						<label for="contactEmail">Email</label>
-						<input type="email" value={newEmail} onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactEmail" placeholder="Email"/>
+						<input type="email" value={newEmail} onChange={(e) => { setNewEmail(e.target.value) }} className="form-control" id="contactEmail" placeholder="Email"/>
 					</div>
 
 					<div className="form-group">
 						<label for="contactPhone">Phone</label>
-						<input type="text" value={newPhone} onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactPhone" placeholder="Phone"/>
+						<input type="text" value={newPhone} onChange={(e) => { setNewPhone(e.target.value) }} className="form-control" id="contactPhone" placeholder="Phone"/>
 					</div>
 
 					<div className="form-group">
 						<label for="contactCity">City</label>
-						<input type="text" value={newCity} onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactCity" placeholder="City"/>
+						<input type="text" value={newCity} onChange={(e) => { setNewCity(e.target.value) }} className="form-control" id="contactCity" placeholder="City"/>
 					</div>
 		
 					<button type="submit" onClick={()=> { actions.editContacts(params.index, newName, newEmail, newPhone, newCity) }} className="btn btn-primary mt-2">Save</button>

@@ -25,22 +25,22 @@ export const AddContacts = () => {
 				<form onSubmit= {(e) => {e.preventDefault()}} className="mt-5">
 					<div className="form-group">
 						<label for="contactName">Full Name</label>
-						<input type="text" onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactName" placeholder="Full Name" aria-describedby="emailHelp"/>
+						<input type="text" onChange={(e) => { setNewName(e.target.value) }} className="form-control" id="contactName" placeholder="Full Name"/>
 					</div>
 
 					<div className="form-group">
 						<label for="contactEmail">Email</label>
-						<input type="email" onChange={(e) => { setNewEmail(e.target.value) }} className="form-control" id="contactEmail" placeholder="Email" aria-describedby="emailHelp"/>
+						<input type="email" onChange={(e) => { setNewEmail(e.target.value) }} className="form-control" id="contactEmail" placeholder="Email"/>
 					</div>
 
 					<div className="form-group">
 						<label for="contactPhone">Phone</label>
-						<input type="text" onChange={(e) => { setNewPhone(e.target.value) }} className="form-control" id="contactPhone" placeholder="Phone" aria-describedby="emailHelp"/>
+						<input type="text" onChange={(e) => { setNewPhone(e.target.value) }} className="form-control" id="contactPhone" placeholder="Phone"/>
 					</div>
 
 					<div className="form-group">
 						<label for="contactCity">City</label>
-						<input type="text" onChange={(e) => { setNewCity(e.target.value) }} className="form-control" id="contactCity" placeholder="City" aria-describedby="emailHelp"/>
+						<input type="text" onChange={(e) => { setNewCity(e.target.value) }} className="form-control" id="contactCity" placeholder="City"/>
 					</div>
 		
 					<button type="submit" onClick={()=> { actions.addContact({name: newName, email: newEmail, phone: newPhone, city: newCity }) }} className="btn btn-primary mt-2">Submit</button>

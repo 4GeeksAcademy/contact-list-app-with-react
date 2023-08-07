@@ -72,6 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addContact: (contact) => {
 				//get the store
 				const store = getStore();
+				contact.address = {city: contact.city}
 				const newContacts= store.allcontacts.concat(contact)
 
 				setStore({ allcontacts: newContacts });
@@ -87,13 +88,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ allcontacts: newContacts });	
 			},
 
-			editContacts: (index, newName) => {
+			editContacts: (index, newName, newEmail, newPhone, newCity) => {
 				//get the store
 				const store = getStore();
 
 				const newContacts = store.allcontacts.map((contact, i) => {
 					if (index == i) {
 						contact.name = newName
+						contact.email = newEmail
+						contact.phone = newPhone
+						contact.city = newCity
 					}
 					return contact;
 			})
